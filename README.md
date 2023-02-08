@@ -13,10 +13,10 @@ Function uses are detailed below.
 Function: query  
 Description: Pull needed information from Gaia
 - Inputs:
-    - file path to csv including Gaia DR3 ids --> works with FriendFinder output
-    - rewrite: whether or not to re-query the stars
+    - file path to csv including Gaia DR3 ids --> works best with FriendFinder output
+    - rewrite: whether or not to re-query the stars -- Default False
         - True --> re-query stars
-        - False --> grab reference to Gaia query --> defaults to False
+        - False --> grab reference to Gaia query 
 - Outputs:
     - pandas dataframe of all stars in the sample with the right available data
     
@@ -24,13 +24,13 @@ Description: Pull needed information from Gaia
 Function: calculate  
 Description: Basic var90 calculations
 - Inputs:
-    - pandas of gaia query results
+    - pandas dataframe of gaia query results
     - Additional cut parameters 
-        - voff --> abs(RV-Rv_pred) < Xkm/s
-            - "on" --> X = 5
+        - rv --> checks abs(RV-Rv_pred) < Xkm/s -- Default False
+            - ONLY AVAILABLE WHEN STARTING WITH FRIENDFINDER OUTPUT FILE
+            - True --> X = 5
             - given value --> X = val
-            - "off" or False or None --> do not cut
-            - need to add -- need to get RV during Gaia query, need and input of expected RV
+            - False or None --> do not cut
 - Outputs:
     - adds varX values to dataframe
     - return varX90 values
@@ -39,22 +39,31 @@ Description: Basic var90 calculations
 Function: age  
 Description: calculate age of group in given band or overall (combining all three bands)
 - Inputs:
-    - path to file with varX values
-        - check to see if file exists -- call calculate if not
-    - band -- G, BP, RP, overall, all
-    - distance --> True/given value, False --> defaults to True
+    - pandas dataframe of gaia query results
+    - band --> which age to report -- Default overall
+        - G
+        - BP
+        - RP
+        - overall --> weighted average of the three bandpass filters
+        - all --> return order: overall, G, BP, RP
+    - distance --> Include distance calibrations -- Default True
         - True --> use median distance of stars
         - given value --> override median dist
         - False --> age without distance
+    - rv --> checks abs(RV-Rv_pred) < Xkm/s -- Default False
+        - ONLY AVAILABLE WHEN STARTING WITH FRIENDFINDER OUTPUT FILE
+        - True --> X = 5
+        - given value --> X = val
+        - False or None --> do not cut
 - Outputs:
-    - return varX90 ages and overall age
+    - return desired varX90 age(s)
  
 
 Function: analyze  
 Description: make plots
 - Inputs:
     - path to file with varX values
-    - Desired bandpass ('G', 'BP', 'RP')
+    - Desired bandpass ('G', 'BP', 'RP') -- Default G
 - Outputs:
     - XYZ colored by varX
     - histogram of varX
