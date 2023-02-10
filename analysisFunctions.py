@@ -323,10 +323,18 @@ def ninety(arr,axis=None):
 
 def calcVar90(group, rv = -1):
     
+    if rv == False or None:
+        rv = -1
     
+    if rv == True:
+        rv = 5
     
     if rv != -1:
-        rvCut = abs(group['Vr(obs)'] - group['Vr(pred)'] ) < rv
+        try:
+            rvCut = abs(group['Vr(obs)'] - group['Vr(pred)'] ) < rv
+        except:
+            rvCut = abs(group['dist']) >= 0 
+            print('Error when trying to impliment RV cut. Reverting to no cut.')
     else:
         rvCut = abs(group['dist']) >= 0 # workaround for no rv cuts
         
