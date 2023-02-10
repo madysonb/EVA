@@ -32,7 +32,7 @@ rCalSamples = pd.read_csv('./calSamples/rCalSamples.csv', header=None)
 rCalDistSamples = pd.read_csv('./calSamples/rDistCalSamples.csv', header=None)
 
 def query(file, rewrite=False):
-    return gaiaQuery(file, rewrite=False)
+    return gaiaQuery(file, rewrite)
 
 def calculate(group, rv=-1):
     calcVarG(group)
