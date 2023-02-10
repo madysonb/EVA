@@ -3,11 +3,11 @@
 
 Madyson G. Barber
 
-This notebook computes the VarX values and VarX90 ages for a given list of stars using methods outlined in [Barber & Mann (2023)](paperlink). We calculate expected Gaia magnitude uncertainties using EDR3_Photometric_Uncertainties from [Riello et al. 2021](https://www.aanda.org/articles/aa/full_html/2021/05/aa39587-20/aa39587-20.html).
+This notebook computes the VarX values and VarX90 ages for a given list of stars using methods outlined in Barber & Mann (in review). We calculate expected Gaia magnitude uncertainties using EDR3_Photometric_Uncertainties from Riello et al. 2021.
 
-A seperate python file (analysisFunctions.py) contains all function definitions used below, as well as some additional helper functions. The sample cuts, as outlined in [Barber & Mann (2023)](paperlink), are included in the filters function. These cuts can be manipulated, but may yield differing results as these are the cuts the calibration is tuned to. 
+A seperate python file (analysisFunctions.py) contains all function definitions used below, as well as some additional helper functions. The sample cuts, as outlined in Barber & Mann (in review), are included in the filters function. These cuts can be manipulated, but may yield differing results as these are the cuts the calibration is tuned to.
 
-Function uses are detailed below.
+Function uses are detailed below. An example use is in Var90Diagnostic.ipynb
 
 ---
 Function: query  
