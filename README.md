@@ -69,11 +69,11 @@ Description: make plots
     - histogram of varX
 
 ---
-### Dependencies
-astropy
-astroquery
-galpy
-matplotlib
-numpy
-pandas
-scipy
+### Dependencies  
+- astropy  
+- astroquery  
+- galpy  
+- matplotlib  
+- numpy  
+- pandas  
+- scipy  
