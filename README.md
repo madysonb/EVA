@@ -67,9 +67,9 @@ Description: make plots
 - Outputs:
     - XYZ colored by varX
     - histogram of varX
-
 ---
-### Dependencies  
+
+## Dependencies  
 - astropy  
 - astroquery  
 - galpy  
@@ -77,3 +77,6 @@ Description: make plots
 - numpy  
 - pandas  
 - scipy  
+
+## Attribution  
+Please cite Barber & Mann (in review) and [Riello et al. 2021](https://www.aanda.org/articles/aa/full_html/2021/05/aa39587-20/aa39587-20.html) if you find this code useful in your research.
