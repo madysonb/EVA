@@ -1,5 +1,5 @@
 ## QCAA - Query, Calculate, Age, Analyze
-### Variability Analysis
+### Variability-Age Analysis
 
 Madyson G. Barber
 
@@ -69,3 +69,11 @@ Description: make plots
     - histogram of varX
 
 ---
+### Dependencies
+astropy
+astroquery
+galpy
+matplotlib
+numpy
+pandas
+scipy
