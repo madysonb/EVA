@@ -150,8 +150,9 @@ def gaiaQuery(file, rewrite=False):
             r = Gaia.cone_search(f'{star[0]}', radius = 5*un.arcsec, table_name = "gaiadr3.gaia_source")
             r = r.get_results()
             
-            # grabs target closest to the search location
-            i = np.where(r['dist'] == min(r['dist']))[0][0]
+            # make sure to grab correct star
+            i = np.where(r['source_id'] == int(star[0].strip('Gaia DR3')))[0][0]
+            #print(r['source_id'][i], star[0].strip('Gaia DR3'), i)
             
             if int(r[i]['phot_bp_n_obs']) != 0 and int(r[i]['phot_rp_n_obs']) != 0:
             
