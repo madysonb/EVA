@@ -354,7 +354,7 @@ def calcVar90(group, rv = -1):
 
 def var90Age(group, distance=True, rv=-1):
     
-    iterations = 10000
+    iterations = 50000
     distVal = 0
     
     Gperc90, Gper90Err, Bperc90, Bper90Err, Rperc90, Rper90Err = calcVar90(group, rv=rv)
@@ -636,7 +636,7 @@ def plotXYZ(group, band='G'):
 def plotHist(group, band='G'):
     plt.figure(figsize=(10,8))
 
-    counts, bins = np.histogram(group[f'var{band}'][filters(group)])
+    counts, bins = np.histogram(group[f'var{band}'][filters(group)], range=(np.nanmin(group[f'var{band}'][filters(group)]), np.nanmax(group[f'var{band}'][filters(group)])))
     plt.stairs(counts, bins, fill=True, alpha = .75)
     
     Gperc90, Gper90Err, Bperc90, Bper90Err, Rperc90, Rper90Err = calcVar90(group)
