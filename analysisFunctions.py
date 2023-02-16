@@ -152,7 +152,7 @@ def gaiaQuery(file, rewrite=False):
             
             # make sure to grab correct star
             i = np.where(r['source_id'] == int(star[0].strip('Gaia DR3')))[0][0]
-            #print(r['source_id'][i], star[0].strip('Gaia DR3'), i)
+            
             
             if int(r[i]['phot_bp_n_obs']) != 0 and int(r[i]['phot_rp_n_obs']) != 0:
             
@@ -588,7 +588,7 @@ def plotXYZ(group, band='G'):
     my_cmap2 = matplotlib.colors.LinearSegmentedColormap('my_colormap2',cdict2,256)
 
 
-    norm = mpl.colors.Normalize(vmin=min(group[f'var{band}'][filters(group)]), vmax=max(group[f'var{band}'][filters(group)]))
+    norm = mpl.colors.Normalize(vmin=np.nanmin(group[f'var{band}'][filters(group)]), vmax=np.nanmax(group[f'var{band}'][filters(group)]))
     scalarMap = cmx.ScalarMappable(norm=norm,cmap=my_cmap2)
 
     color = scalarMap.to_rgba(group[f'var{band}'][filters(group)])
