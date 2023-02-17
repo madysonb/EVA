@@ -1,5 +1,5 @@
-## QCAA - Query, Calculate, Age, Analyze
-### Variability-Age Analysis
+## EVA
+### Excess Variability-based Age
 
 Madyson G. Barber
 
