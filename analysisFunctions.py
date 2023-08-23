@@ -151,7 +151,7 @@ def gaiaQuery(file, rewrite=False):
             r = r.get_results()
             
             # make sure to grab correct star
-            i = np.where(r['source_id'] == int(star[0].strip('Gaia DR3')))[0][0]
+            i = np.where(r['source_id'] == int(star[0].split(' ')[-1]))[0][0]
             
             
             if int(r[i]['phot_bp_n_obs']) != 0 and int(r[i]['phot_rp_n_obs']) != 0:
