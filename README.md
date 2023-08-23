@@ -3,9 +3,9 @@
 
 Madyson G. Barber
 
-This notebook computes the VarX values and VarX90 ages for a given list of stars using methods outlined in Barber & Mann (in review). We calculate expected Gaia magnitude uncertainties using [EDR3_Photometric_Uncertainties](https://github.com/gaia-dpci/gaia-dr3-photometric-uncertainties) from [Riello et al. 2021](https://www.aanda.org/articles/aa/full_html/2021/05/aa39587-20/aa39587-20.html).
+This notebook computes the VarX values and VarX90 ages for a given list of stars using methods outlined in [Barber & Mann (in review)](https://arxiv.org/abs/2302.09084). We calculate expected Gaia magnitude uncertainties using [EDR3_Photometric_Uncertainties](https://github.com/gaia-dpci/gaia-dr3-photometric-uncertainties) from [Riello et al. 2021](https://www.aanda.org/articles/aa/full_html/2021/05/aa39587-20/aa39587-20.html).
 
-A seperate python file (analysisFunctions.py) contains all function definitions used below, as well as some additional helper functions. The sample cuts, as outlined in Barber & Mann (in review), are included in the filters function. These cuts can be manipulated, but may yield differing results as these are the cuts the calibration is tuned to.
+A seperate python file (analysisFunctions.py) contains all function definitions used below, as well as some additional helper functions. The sample cuts, as outlined in [Barber & Mann (in review)](https://arxiv.org/abs/2302.09084), are included in the filters function. These cuts can be manipulated, but may yield differing results as these are the cuts the calibration is tuned to.
 
 Function uses are detailed below. An example use is in Var90Diagnostic.ipynb
 
@@ -79,4 +79,4 @@ Description: make plots
 - scipy  
 
 ## Attribution  
-Please cite Barber & Mann (in review) and [Riello et al. 2021](https://www.aanda.org/articles/aa/full_html/2021/05/aa39587-20/aa39587-20.html) if you find this code useful in your research.
+Please cite [Barber & Mann (in review)](https://arxiv.org/abs/2302.09084) and [Riello et al. 2021](https://www.aanda.org/articles/aa/full_html/2021/05/aa39587-20/aa39587-20.html) if you find this code useful in your research.
